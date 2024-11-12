@@ -1,18 +1,13 @@
 package org.fiware.tmforum.productofferingterm;
 
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import org.fiware.tmforum.common.domain.RefEntity;
-import io.github.wistefan.mapping.annotations.AttributeGetter;
-import io.github.wistefan.mapping.annotations.AttributeSetter;
-import io.github.wistefan.mapping.annotations.AttributeType;
 import io.github.wistefan.mapping.annotations.MappingEnabled;
+import org.fiware.tmforum.common.domain.RefEntity;
 
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
-@MappingEnabled(entityType = {"marketplace"})
+@MappingEnabled
 public class MarketplaceRef extends RefEntity {
 
     public MarketplaceRef(String id) {
@@ -21,7 +16,7 @@ public class MarketplaceRef extends RefEntity {
 
     @Override
     public List<String> getReferencedTypes() {
-        return List.of("marketplace");
+        return List.of(getAtReferredType());
     }
 
 }
